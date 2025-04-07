@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .container { margin-top: 50px; }
+        img { width: 250px; }
+        .cta { padding: 10px 20px; background: #28a745; color: white; text-decoration: none; display: inline-block; margin-top: 20px; border-radius: 5px; }
+    </style>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("amount").innerText = "₹" + params.get("amount");
+            document.getElementById("service").innerText = params.get("service");
+        }
+    </script>
+</head>
+<body onload="getQueryParams()">
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+        <p>Service: <strong id="service"></strong></p>
+        <p>Amount: <strong id="amount"></strong></p>
+        <p>Scan the QR code to pay via UPI</p>
+        <img src="./assets/images/QR Code.jpeg" alt="UPI QR Code">
+        <br>
+        <a href="index.html" class="cta">Payment Done? Please share screenshot of payment on #916291790231</a>
+    </div>
+    <div class="floating-contact">
+        <a href="tel:+916291790231" class="float-btn call-btn" title="Call Now">
+            📞
+        </a>
+        <a href="https://wa.me/916291790231" target="_blank" class="float-btn whatsapp-btn" title="WhatsApp">
+            🟢
+        </a>
+    </div>
+</body>
+</html>

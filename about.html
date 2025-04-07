@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Deep Roy’s Tarot & Numerology</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sparkle-overlay"></div>
+    <nav class="navbar">
+        <div class="logo">Deep Roy’s Tarot & Numerology</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+        <h2>Meet Deep Roy: The Cosmic Trailblazer</h2>
+        <div class="bio">
+            <!-- Profile Picture -->
+<img src="./assets/images/Deep Roy-2.jpg" alt="Deep Roy" class="profile-pic" onclick="openModal(this)">
+<div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+            <p>Deep Roy brings the universe to life with electrifying tarot readings and numerology insights—your guide to a dazzling destiny! With over <strong>10 years of cosmic mastery</strong>, Deep Roy has ignited countless souls with profound visions and vibrant energy. From humble beginnings as a stargazer to becoming a celebrated mystic, his journey is a supernova of passion and power.</p>
+            <p>A decade ago, Deep Roy picked up his first tarot deck, sparking a wildfire of intuition that’s burned bright ever since. He’s racked up <strong>prestigious awards</strong>—think Cosmic Seer of the Year and Mystic Excellence honors—proving his chops as a luminary in the occult. His crown jewel? The rare <strong>Gold Card</strong>, a badge of elite mastery bestowed by the Global Tarot Guild, marking him as one of the world’s top diviners.</p>
+            <p>Whether it’s decoding your Life Path or flipping cards that zap your fate into focus, Deep Roy’s electric vibe and decade of wisdom light up the galaxy. Ready to ride his cosmic wave? Your adventure starts here!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/yogi_tarot?igsh=Y2x3OXM1bmg2cndh&utm_source=ig_contact_invite">Instagram</a> |
+            <a href="https://www.facebook.com/profile.php?id=61574909345608">Facebook</a> |
+            <a href="#">YouTube</a>
+        </div>
+        <div class="legal">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>© 2025 Deep Roy’s Tarot & Numerology | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("imgModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+        
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+        </script>
+
+<div class="floating-contact">
+    <a href="tel:+916291790231" class="float-btn call-btn" title="Call Now">
+        📞
+    </a>
+    <a href="https://wa.me/916291790231" target="_blank" class="float-btn whatsapp-btn" title="WhatsApp">
+        🟢
+    </a>
+</div>
+</body>
+</html>

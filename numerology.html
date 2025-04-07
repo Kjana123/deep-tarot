@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology - Deep Roy’s Tarot & Numerology</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sparkle-overlay"></div>
+    <nav class="navbar">
+        <div class="logo">Deep Roy’s Tarot & Numerology</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tarot.html">Tarot</a></li>
+            <li><a href="numerology.html">Numerology</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+                
+
+
+                
+    <section class="numerology-section">
+        <h2>Unleash Your Number Power!</h2>
+        <p>Enter your birthdate and watch your Life Path ignite.</p>
+        <input type="date" id="birthdate" max="2025-03-28">
+        <button onclick="calculateLifePath()">Blast Off!</button>
+        <div id="numerology-result" class="result"></div>
+
+        <div class="contact-row">
+            <a href="https://wa.me/916291790231" target="_blank" class="contact-button whatsapp">
+                📱 WhatsApp Us
+            </a>
+            <a href="tel:+916291790231" class="contact-button call">
+                📞 Call Now
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/yogi_tarot?igsh=Y2x3OXM1bmg2cndh&utm_source=ig_contact_invite">Instagram</a> |
+            <a href="https://www.facebook.com/profile.php?id=61574909345608">Facebook</a> |
+            <a href="#">YouTube</a>
+        </div>
+        <div class="legal">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>© 2025 Deep Roy’s Tarot & Numerology | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <div class="floating-contact">
+        <a href="tel:+916291790231" class="float-btn call-btn" title="Call Now">
+            📞
+        </a>
+        <a href="https://wa.me/916291790231" target="_blank" class="float-btn whatsapp-btn" title="WhatsApp">
+            🟢
+        </a>
+    </div>
+</body>
+<script>
+    const tarotMeanings = [
+        "The Fool – New beginnings await you.",
+        "The Magician – Manifest your desires.",
+        "The High Priestess – Trust your intuition.",
+        "The Empress – Embrace creativity and nurture.",
+        "The Emperor – Step into your power.",
+        "The Lovers – A choice from the heart is coming.",
+        "The Chariot – Stay focused and charge forward.",
+        "Strength – Inner courage will guide you.",
+        "The Hermit – Seek wisdom within.",
+        "Wheel of Fortune – Big changes are ahead."
+    ];
+
+    function showTarotCards() {
+        document.getElementById("tarotIntro").classList.add("hidden");
+        document.getElementById("tarotCards").classList.remove("hidden");
+    }
+
+    function revealCard(cardEl, index) {
+        // Flip the selected card
+        cardEl.classList.add("flipped");
+
+        // Disable other cards
+        const allCards = document.querySelectorAll(".tarot-card");
+        allCards.forEach(c => {
+            c.onclick = null;
+            if (c !== cardEl) c.parentElement.style.opacity = "0.3";
+        });
+
+        // Show the meaning
+        document.getElementById("cardResult").innerText = tarotMeanings[index];
+        document.getElementById("tarotMessage").classList.remove("hidden");
+    }
+
+    function resetTarot() {
+        document.getElementById("tarotMessage").classList.add("hidden");
+        document.getElementById("tarotIntro").classList.remove("hidden");
+        document.getElementById("tarotCards").classList.add("hidden");
+
+        // Reset each card
+        const cards = document.querySelectorAll(".tarot-card");
+        cards.forEach(card => {
+            card.classList.remove("flipped");
+            card.parentElement.style.opacity = "1";
+        });
+
+        // Re-enable click
+        cards.forEach((card, i) => {
+            card.setAttribute("onclick", `revealCard(this, ${i})`);
+        });
+    }
+</script>
+
+
+</html>
